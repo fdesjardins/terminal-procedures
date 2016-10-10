@@ -1,6 +1,6 @@
 {
   "name": "terminal-procedures",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Fetch terminal procedures from https://www.faa.gov/",
   "main": "index.js",
   "repository": "fdesjardins/terminal-procedures",
