@@ -16,7 +16,7 @@ terminalProcedures.list = (icaos, options = {}) => {
 }
 
 const listOne = (icao) => {
-  return request(`https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/search/results/?cycle=1610&ident=${icao}&sort=type&dir=asc`)
+  return request(`https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/search/results/?cycle=1701&ident=${icao}&sort=type&dir=asc`)
     .then(res => parse(res.body))
 }
 
