@@ -15,49 +15,82 @@ $ npm install --save terminal-procedures
 ## Usage
 
 ```js
-airportDiagrams.list(['PANC', 'PADK']).then(results => {
+const terminalProcedures = require('./')
+
+terminalProcedures.list('KLOL').then(results => {
   console.log(JSON.stringify(results, null, 2))
 })
 ```
 
 ### Output
 
-```
+```json
 [
-  [
-    {
-      "state": "AK",
-      "city": "ANCHORAGE",
-      "airport": "TED STEVENS ANCHORAGE INTL",
-      "ident": "ANC (PANC)",
-      "vol": "N/A",
-      "flag": "",
-      "type": "AHS",
-      "procedure": {
-        "name": "A/FD HOT SPOT (PDF)",
-        "url": "http://aeronav.faa.gov/afd/15Sep2016/ak_hotspot.pdf"
-      },
-      "compare": {
-        "name": "N/A"
-      }
+  {
+    "state": "NV",
+    "city": "LOVELOCK",
+    "airport": "DERBY FIELD",
+    "ident": "LOL (KLOL)",
+    "vol": "SW-4",
+    "flag": "",
+    "type": "IAP",
+    "procedure": {
+      "name": "GPS RWY 02 (PDF)",
+      "url": "http://aeronav.faa.gov/d-tpp/1701/00941g2.pdf#search=KLOL"
     },
-    {
-      "state": "AK",
-      "city": "ANCHORAGE",
-      "airport": "TED STEVENS ANCHORAGE INTL",
-      "ident": "ANC (PANC)",
-      "vol": "AK-1",
-      "flag": "",
-      "type": "APD",
-      "procedure": {
-        "name": "AIRPORT DIAGRAM (PDF)",
-        "url": "http://aeronav.faa.gov/d-tpp/1610/01500ad.pdf#search=PANC"
-      },
-      "compare": {
-        "name": "N/A"
-      }
+    "compare": {
+      "name": "N/A"
+    }
+  },
+  {
+    "state": "NV",
+    "city": "LOVELOCK",
+    "airport": "DERBY FIELD",
+    "ident": "LOL (KLOL)",
+    "vol": "SW-4",
+    "flag": "",
+    "type": "IAP",
+    "procedure": {
+      "name": "VOR/DME OR GPS-A (PDF)",
+      "url": "http://aeronav.faa.gov/d-tpp/1701/00941vdga.pdf#search=KLOL"
     },
-    ...
+    "compare": {
+      "name": "N/A"
+    }
+  },
+  {
+    "state": "NV",
+    "city": "LOVELOCK",
+    "airport": "DERBY FIELD",
+    "ident": "LOL (KLOL)",
+    "vol": "SW-4",
+    "flag": "",
+    "type": "MIN",
+    "procedure": {
+      "name": "TAKEOFF MINIMUMS (PDF)",
+      "url": "http://aeronav.faa.gov/d-tpp/1701/sw4to.pdf#search=KLOL"
+    },
+    "compare": {
+      "name": "N/A"
+    }
+  },
+  {
+    "state": "NV",
+    "city": "LOVELOCK",
+    "airport": "DERBY FIELD",
+    "ident": "LOL (KLOL)",
+    "vol": "SW-4",
+    "flag": "",
+    "type": "MIN",
+    "procedure": {
+      "name": "ALTERNATE MINIMUMS (PDF)",
+      "url": "http://aeronav.faa.gov/d-tpp/1701/sw4alt.pdf#search=KLOL"
+    },
+    "compare": {
+      "name": "N/A"
+    }
+  }
+]
 ```
 
 ## API
