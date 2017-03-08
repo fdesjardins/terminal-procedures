@@ -21,6 +21,12 @@ describe('terminalProcedures', () => {
     return terminalProcedures.list('PANC')
   })
 
+  it('should expose the fetchCurrentCycle method', () => {
+    return terminalProcedures.fetchCurrentCycle().then(cycle => {
+      assert(parseInt(cycle))
+    })
+  })
+
   it('should fetch terminal procedures for an array of ICAOs using the list method', () => {
     return terminalProcedures.list(['PANC', 'KSFO']).then(procedures => {
       assert(procedures.length === 2)
