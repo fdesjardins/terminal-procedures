@@ -1,5 +1,18 @@
 const terminalProcedures = require('./')
 
-terminalProcedures.list('KLOL').then(results => {
-  console.log(JSON.stringify(results, null, 2))
+terminalProcedures.list('PANC').then(results => {
+  const out = results.map(tp => {
+    return {
+      name: tp.procedure.name,
+      type: tp.type,
+      url: tp.procedure.url
+    }
+  })
+  console.log(JSON.stringify({
+    documents: {
+      terminalProcedures: [
+        out
+      ]
+    }
+  }, null, 2))
 })
