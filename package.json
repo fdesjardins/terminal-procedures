@@ -33,7 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "cheerio": "^0.22.0",
+    "cheerio": "^1.0.0-rc.1",
     "request": "^2.81.0"
   },
   "devDependencies": {
