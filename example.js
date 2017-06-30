@@ -1,6 +1,6 @@
 const terminalProcedures = require('./')
 
-terminalProcedures.list('PANC').then(results => {
+terminalProcedures.list('KBRO').then(results => {
   const out = results.map(tp => {
     return {
       name: tp.procedure.name,

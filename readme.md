@@ -17,7 +17,7 @@ $ npm install --save terminal-procedures
 ```js
 const terminalProcedures = require('./')
 
-terminalProcedures.list('KLOL').then(results => {
+terminalProcedures.list('PANC').then(results => {
   console.log(JSON.stringify(results, null, 2))
 })
 ```
@@ -25,72 +25,59 @@ terminalProcedures.list('KLOL').then(results => {
 ### Output
 
 ```json
-[
-  {
-    "state": "NV",
-    "city": "LOVELOCK",
-    "airport": "DERBY FIELD",
-    "ident": "LOL (KLOL)",
-    "vol": "SW-4",
-    "flag": "",
-    "type": "IAP",
-    "procedure": {
-      "name": "GPS RWY 02 (PDF)",
-      "url": "http://aeronav.faa.gov/d-tpp/1701/00941g2.pdf#search=KLOL"
-    },
-    "compare": {
-      "name": "N/A"
-    }
-  },
-  {
-    "state": "NV",
-    "city": "LOVELOCK",
-    "airport": "DERBY FIELD",
-    "ident": "LOL (KLOL)",
-    "vol": "SW-4",
-    "flag": "",
-    "type": "IAP",
-    "procedure": {
-      "name": "VOR/DME OR GPS-A (PDF)",
-      "url": "http://aeronav.faa.gov/d-tpp/1701/00941vdga.pdf#search=KLOL"
-    },
-    "compare": {
-      "name": "N/A"
-    }
-  },
-  {
-    "state": "NV",
-    "city": "LOVELOCK",
-    "airport": "DERBY FIELD",
-    "ident": "LOL (KLOL)",
-    "vol": "SW-4",
-    "flag": "",
-    "type": "MIN",
-    "procedure": {
-      "name": "TAKEOFF MINIMUMS (PDF)",
-      "url": "http://aeronav.faa.gov/d-tpp/1701/sw4to.pdf#search=KLOL"
-    },
-    "compare": {
-      "name": "N/A"
-    }
-  },
-  {
-    "state": "NV",
-    "city": "LOVELOCK",
-    "airport": "DERBY FIELD",
-    "ident": "LOL (KLOL)",
-    "vol": "SW-4",
-    "flag": "",
-    "type": "MIN",
-    "procedure": {
-      "name": "ALTERNATE MINIMUMS (PDF)",
-      "url": "http://aeronav.faa.gov/d-tpp/1701/sw4alt.pdf#search=KLOL"
-    },
-    "compare": {
-      "name": "N/A"
-    }
+{
+  "documents": {
+    "terminalProcedures": [
+      [
+        {
+          "name": "AIRPORT DIAGRAM (PDF)",
+          "type": "APD",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/00061ad.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "ILS OR LOC RWY 13 (PDF)",
+          "type": "IAP",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/00061il13.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "RNAV (GPS) RWY 13 (PDF)",
+          "type": "IAP",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/00061r13.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "RNAV (GPS) RWY 18 (PDF)",
+          "type": "IAP",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/00061r18.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "LOC BC RWY 31 (PDF)",
+          "type": "IAP",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/00061lbc31.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "VOR OR TACAN-A (PDF)",
+          "type": "IAP",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/00061vta.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "LAHSO (PDF)",
+          "type": "LAH",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/sc3lahso.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "TAKEOFF MINIMUMS (PDF)",
+          "type": "MIN",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/sc3to.pdf#nameddest=(BRO)"
+        },
+        {
+          "name": "ALTERNATE MINIMUMS (PDF)",
+          "type": "MIN",
+          "url": "http://aeronav.faa.gov/d-tpp/1707/sc3alt.pdf#nameddest=(BRO)"
+        }
+      ]
+    ]
   }
-]
+}
 ```
 
 ## API
