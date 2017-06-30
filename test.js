@@ -33,4 +33,10 @@ describe('terminalProcedures', () => {
       procedures.map(assert)
     })
   })
+
+  it('should fetch all terminal procedures on multiple pages', () => {
+    return terminalProcedures.list('KIAH').then(procedures => {
+      assert(procedures.length > 50)
+    })
+  })
 })

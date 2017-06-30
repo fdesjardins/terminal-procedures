@@ -21,11 +21,23 @@ const fetchCurrentCycle = terminalProcedures.fetchCurrentCycle = () => request('
     return $('select#cycle > option:contains(Current)').val()
   })
 
-const listOne = (icao) => {
-  return fetchCurrentCycle().then(searchCycle => {
-    return request(`https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/search/results/?cycle=${searchCycle}&ident=${icao}&sort=type&dir=asc`)
+const listOne = async icao => {
+  const searchCycle = await fetchCurrentCycle()
+  let procedures = []
+  let lastPageFetched = 0
+  let lastNumFetched = 1
+  while (lastNumFetched > 0) {
+    const page = await request(`https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/search/results/?cycle=${searchCycle}&ident=${icao}&sort=type&dir=asc&page=${lastPageFetched + 1}`)
       .then(res => parse(res.body))
-  })
+    if (page) {
+      lastNumFetched = page.length
+      lastPageFetched += 1
+      procedures = procedures.concat(page)
+    } else {
+      break
+    }
+  }
+  return procedures
 }
 
 // Parse the response HTML
