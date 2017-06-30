@@ -17,7 +17,7 @@ $ npm install --save terminal-procedures
 ```js
 const terminalProcedures = require('./')
 
-terminalProcedures.list('PANC').then(results => {
+terminalProcedures.list('KBRO').then(results => {
   console.log(JSON.stringify(results, null, 2))
 })
 ```
