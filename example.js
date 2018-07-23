@@ -1,6 +1,7 @@
 const terminalProcedures = require('./')
 
-terminalProcedures.list('KBRO').then(results => {
+terminalProcedures.list('PANC').then(results => {
+  console.log(results)
   const out = results.map(tp => {
     return {
       name: tp.procedure.name,
@@ -8,11 +9,15 @@ terminalProcedures.list('KBRO').then(results => {
       url: tp.procedure.url
     }
   })
-  console.log(JSON.stringify({
-    documents: {
-      terminalProcedures: [
-        out
-      ]
-    }
-  }, null, 2))
+  console.log(
+    JSON.stringify(
+      {
+        documents: {
+          terminalProcedures: [out]
+        }
+      },
+      null,
+      2
+    )
+  )
 })
