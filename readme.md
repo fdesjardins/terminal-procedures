@@ -1,10 +1,11 @@
 # terminal-procedures
 
+Fetch the latest terminal procedures information from https://www.faa.gov/
+
 [![Build Status][travis-image]][travis-url]
 [![NPM Version][npm-image]][npm-url]
 [![Coverage][coveralls-image]][coveralls-url]
-
-Fetch the latest terminal procedures information from https://www.faa.gov/
+[![Maintainability][code-climate-image]][code-climate-url]
 
 ## Installation
 
@@ -83,6 +84,7 @@ terminalProcedures.list('KBRO').then(results => {
 ## API
 
 ### `terminalProcedures(icaos)`
+
 ### `terminalProcedures.list(icaos)`
 
 #### `icaos`
@@ -90,10 +92,13 @@ terminalProcedures.list('KBRO').then(results => {
 Type: `string` or `array`
 
 One of the following:
+
 - a single ICAO code
 - an array of ICAO codes
 
 ### `terminalProcedures.fetchCurrentCycle()`
+
+Fetch the current diagrams distribution cycle numbers (.e.g, 1813)
 
 ## License
 
@@ -105,3 +110,5 @@ MIT © [Forrest Desjardins](https://github.com/fdesjardins)
 [travis-image]: https://img.shields.io/travis/fdesjardins/terminal-procedures.svg?style=flat
 [coveralls-url]: https://coveralls.io/r/fdesjardins/terminal-procedures
 [coveralls-image]: https://img.shields.io/coveralls/fdesjardins/terminal-procedures.svg?style=flat
+[code-climate-url]: https://codeclimate.com/github/fdesjardins/terminal-procedures/maintainability
+[code-climate-image]: https://api.codeclimate.com/v1/badges/62235bf632b6f023b461/maintainability
