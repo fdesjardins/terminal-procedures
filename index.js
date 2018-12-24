@@ -1,6 +1,5 @@
-const Promise = require('bluebird')
-const request = Promise.promisify(require('request'))
 const cheerio = require('cheerio')
+const superagent = require('superagent')
 
 const BASE_URL =
   'https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/search'
@@ -25,11 +24,11 @@ terminalProcedures.list = (icaos, options = {}) => {
 /**
  * Fetch the current diagrams distribution cycle numbers (.e.g, 1813)
  */
-const fetchCurrentCycle = (terminalProcedures.fetchCurrentCycle = () =>
-  request(BASE_URL).then(res => {
-    const $ = cheerio.load(res.body)
-    return $('select#cycle > option:contains(Current)').val()
-  }))
+const fetchCurrentCycle = (terminalProcedures.fetchCurrentCycle = async () => {
+  const response = await superagent.get(BASE_URL)
+  const $ = cheerio.load(response.text)
+  return $('select#cycle > option:contains(Current)').val()
+})
 
 /**
  * Using the current cycle, fetch the terminal procedures for a single ICAO code
@@ -40,10 +39,12 @@ const listOne = async icao => {
   let lastPageFetched = 0
   let lastNumFetched = 1
   while (lastNumFetched > 0) {
-    const page = await request(
-      `${BASE_URL}/results/?cycle=${searchCycle}&ident=${icao}&sort=type&dir=asc&page=${lastPageFetched +
-        1}`
-    ).then(res => parse(res.body))
+    const page = await superagent
+      .get(
+        `${BASE_URL}/results/?cycle=${searchCycle}&ident=${icao}&sort=type&dir=asc&page=${lastPageFetched +
+          1}`
+      )
+      .then(res => parse(res.text))
     if (page) {
       lastNumFetched = page.length
       lastPageFetched += 1

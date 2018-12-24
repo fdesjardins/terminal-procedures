@@ -8,9 +8,8 @@
     "url": "github.com/fdesjardins"
   },
   "dependencies": {
-    "bluebird": "^3.5.3",
     "cheerio": "^1.0.0-rc.2",
-    "request": "^2.88.0"
+    "superagent": "^4.0.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
@@ -19,7 +18,7 @@
     "standard": "^12.0.1"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "eslintConfig": {
     "extends": [
