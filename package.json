@@ -1,7 +1,7 @@
 {
   "name": "terminal-procedures",
   "description": "Fetch terminal procedures from https://www.faa.gov/",
-  "version": "0.3.15",
+  "version": "0.4.0",
   "author": {
     "name": "Forrest Desjardins",
     "email": "desjardinsfg@gmail.com",
