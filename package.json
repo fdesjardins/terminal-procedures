@@ -1,36 +1,12 @@
 {
   "name": "terminal-procedures",
-  "version": "0.3.15",
   "description": "Fetch terminal procedures from https://www.faa.gov/",
-  "main": "index.js",
-  "repository": "fdesjardins/terminal-procedures",
+  "version": "0.3.15",
   "author": {
     "name": "Forrest Desjardins",
     "email": "desjardinsfg@gmail.com",
     "url": "github.com/fdesjardins"
   },
-  "engines": {
-    "node": ">=6"
-  },
-  "scripts": {
-    "test": "eslint *.js && nyc ./node_modules/.bin/mocha --opts mocha.opts test.js"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "charts",
-    "airports",
-    "aviation",
-    "terminal",
-    "procedures",
-    "diagrams",
-    "notices",
-    "faa",
-    "api",
-    "documents"
-  ],
-  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.3",
     "cheerio": "^1.0.0-rc.2",
@@ -39,19 +15,63 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
-    "eslint": "^5.11.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
     "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "standard": "^12.0.1"
   },
+  "engines": {
+    "node": ">=6"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ],
+    "rules": {
+      "object-curly-spacing": [
+        2,
+        "always"
+      ],
+      "array-bracket-spacing": [
+        2,
+        "always"
+      ],
+      "func-style": [
+        2,
+        "expression"
+      ],
+      "prefer-arrow-callback": [
+        2,
+        {
+          "allowNamedFunctions": false
+        }
+      ]
+    }
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "airports",
+    "api",
+    "aviation",
+    "charts",
+    "diagrams",
+    "documents",
+    "faa",
+    "notices",
+    "procedures",
+    "terminal"
+  ],
+  "license": "MIT",
+  "main": "index.js",
   "nyc": {
     "reporter": [
       "lcov",
       "text"
     ]
+  },
+  "repository": "fdesjardins/terminal-procedures",
+  "scripts": {
+    "test": "eslint *.js && nyc ./node_modules/.bin/mocha --opts mocha.opts test.js"
   }
 }

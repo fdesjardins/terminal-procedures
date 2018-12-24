@@ -11,7 +11,7 @@ describe('terminalProcedures', () => {
   })
 
   it('should fetch terminal procedures for an array of ICAOs', () => {
-    return terminalProcedures(['PANC', 'KSFO']).then(procedures => {
+    return terminalProcedures([ 'PANC', 'KSFO' ]).then(procedures => {
       assert(procedures.length === 2)
       procedures.map(assert)
     })
@@ -28,7 +28,7 @@ describe('terminalProcedures', () => {
   })
 
   it('should fetch terminal procedures for an array of ICAOs using the list method', () => {
-    return terminalProcedures.list(['PANC', 'KSFO']).then(procedures => {
+    return terminalProcedures.list([ 'PANC', 'KSFO' ]).then(procedures => {
       assert(procedures.length === 2)
       procedures.map(assert)
     })

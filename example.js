@@ -13,7 +13,7 @@ terminalProcedures.list('PANC').then(results => {
     JSON.stringify(
       {
         documents: {
-          terminalProcedures: [out]
+          terminalProcedures: [ out ]
         }
       },
       null,
