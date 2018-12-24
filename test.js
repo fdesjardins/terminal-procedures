@@ -1,6 +1,6 @@
 /* global describe, it */
 
-const assert = require('chai').assert
+const assert = require('assert')
 const terminalProcedures = require('./index')
 
 describe('terminalProcedures', () => {

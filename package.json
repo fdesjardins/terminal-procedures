@@ -13,7 +13,6 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
@@ -72,6 +71,6 @@
   },
   "repository": "fdesjardins/terminal-procedures",
   "scripts": {
-    "test": "eslint *.js && nyc ./node_modules/.bin/mocha --opts mocha.opts test.js"
+    "test": "eslint *.js && nyc mocha --opts mocha.opts test.js"
   }
 }
