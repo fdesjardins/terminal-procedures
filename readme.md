@@ -2,8 +2,8 @@
 
 Fetch the latest terminal procedures information from https://www.faa.gov/
 
-[![Build Status][travis-image]][travis-url]
 [![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
 [![Coverage][coveralls-image]][coveralls-url]
 [![Maintainability][code-climate-image]][code-climate-url]
 
