@@ -70,6 +70,6 @@
   },
   "repository": "fdesjardins/terminal-procedures",
   "scripts": {
-    "test": "eslint *.js && nyc mocha --opts mocha.opts test.js"
+    "test": "eslint *.js && nyc mocha test.js"
   }
 }
