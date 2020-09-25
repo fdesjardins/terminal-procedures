@@ -1,5 +1,7 @@
 const terminalProcedures = require('./')
 
+terminalProcedures.fetchCurrentCycle().then(r => console.log(r))
+
 terminalProcedures.list('PANC').then(results => {
   console.log(results)
   const out = results.map(tp => {

@@ -2,7 +2,10 @@ const cheerio = require('cheerio')
 const superagent = require('superagent')
 
 const BASE_URL =
-  'https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/search'
+  'https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/search/'
+
+// For some reason the server takes forever to respond without this request header
+const ACCEPT = 'text/html'
 
 /**
  *  A shortcut to the list() method
@@ -25,7 +28,10 @@ terminalProcedures.list = (icaos, options = {}) => {
  * Fetch the current diagrams distribution cycle numbers (.e.g, 1813)
  */
 const fetchCurrentCycle = (terminalProcedures.fetchCurrentCycle = async () => {
-  const response = await superagent.get(BASE_URL)
+  const response = await superagent
+    .get(BASE_URL)
+    .set('Accept', ACCEPT)
+
   const $ = cheerio.load(response.text)
   return $('select#cycle > option:contains(Current)').val()
 })
@@ -44,6 +50,7 @@ const listOne = async icao => {
         `${BASE_URL}/results/?cycle=${searchCycle}&ident=${icao}&sort=type&dir=asc&page=${lastPageFetched +
           1}`
       )
+      .set('Accept', ACCEPT)
       .then(res => parse(res.text))
     if (page) {
       lastNumFetched = page.length
