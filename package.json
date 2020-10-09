@@ -3,9 +3,9 @@
   "description": "Fetch terminal procedures from https://www.faa.gov/",
   "version": "1.0.5",
   "author": {
-    "name": "Forrest Desjardins",
-    "email": "desjardinsfg@gmail.com",
-    "url": "github.com/fdesjardins"
+    "name": "FAA Aviation Data Portal",
+    "email": "9-AJO-WCAM-IT@faa.gov",
+    "url": "https://github.com/FAA-Aviation-Data-Portal"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
@@ -68,8 +68,9 @@
       "text"
     ]
   },
-  "repository": "fdesjardins/terminal-procedures",
+  "repository": "FAA-Aviation-Data-Portal/terminal-procedures",
   "scripts": {
+    "debug": "node ./example.js",
     "test": "eslint *.js && nyc mocha test.js"
   }
 }
